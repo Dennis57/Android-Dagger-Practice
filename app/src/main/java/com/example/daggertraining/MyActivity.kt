@@ -22,13 +22,11 @@ class MyActivity : Activity() {
     lateinit var sharedPreferences: SharedPreferences
 
     @Inject
-    lateinit var arrayAdapter: ArrayAdapter<>
+    lateinit var arrayAdapter: ArrayAdapter<Repository>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
 
         (application as MyApp).appComponent!!.inject(this)
     }

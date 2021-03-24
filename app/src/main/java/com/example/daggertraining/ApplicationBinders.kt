@@ -7,15 +7,16 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import java.lang.annotation.ElementType
 
-@Module(subcomponents={ MyActivitySubComponent.class })
-public abstract class ApplicationBinders {
+@Module(subcomponents=[ MyActivitySubComponent::class])
+abstract class ApplicationBinders {
     // Provide the builder to be included in a mapping used for creating the builders.
-    @Binds @IntoMap @SubcomponentKey(MyActivitySubComponent.Builder.class)
-            SubcomponentBuilder myActivity(MyActivitySubComponent.Builder impl)
+//    @Binds @IntoMap @SubcomponentKey(MyActivitySubComponent.Builder.class)
+    @Binds @IntoMap @SubcomponentKey(MyActivitySubComponent.Builder::class)
+    abstract fun myActivity(impl: MyActivitySubComponent.Builder): SubcomponentBuilder<*>
 }
 
-@Component(modules={..., ApplicationBinders.class})
-public interface ApplicationComponent {
+@Component(modules=[ApplicationBinders::class])
+interface ApplicationComponent {
     // Returns a map with all the builders mapped by their class.
     Map<Class<?>, Provider<SubcomponentBuilder>> subcomponentBuilders();
 }
@@ -23,6 +24,6 @@ public interface ApplicationComponent {
 // Needed only to create the above mapping
 @MapKey
 @Target({ ElementType.METHOD}) @Retention(AnnotationRetention.RUNTIME)
-public @interface SubcomponentKey {
-    Class<?> value();
+interface SubcomponentKey {
+    value: Class<>
 }

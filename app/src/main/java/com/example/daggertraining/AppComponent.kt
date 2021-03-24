@@ -11,7 +11,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [AppModule::class, NetModule::class])
 interface AppComponent {
-    fun inject(activity: MainActivity)
+    fun inject(activity: MyActivity)
 
     // remove injection methods if downstream modules will perform injection
     // downstream components need these exposed

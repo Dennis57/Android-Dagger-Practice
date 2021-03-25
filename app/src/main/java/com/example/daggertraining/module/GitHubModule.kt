@@ -1,18 +1,21 @@
-package com.example.daggertraining
+package com.example.daggertraining.module
 
+import com.example.daggertraining.Repository
+import com.example.daggertraining.UserScope
 import dagger.Module
 import dagger.Provides
-import retrofit2.Call
+import io.reactivex.Observable
 import retrofit2.Retrofit
 import retrofit2.http.GET
 import retrofit2.http.Path
+import javax.inject.Singleton
 
 
 @Module
-class GitHubModule {
+object GitHubModule {
     interface GitHubApiInterface {
         @GET("/org/{orgName}/repos")
-        fun getRepository(@Path("orgName") orgName: String): Call<List<Repository>>
+        fun getRepository(@Path("orgName") orgName: String): Observable<List<Repository>>
     }
 
     @Provides

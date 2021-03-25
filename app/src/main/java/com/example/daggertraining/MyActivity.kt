@@ -24,10 +24,15 @@ class MyActivity : Activity() {
     @Inject
     lateinit var arrayAdapter: ArrayAdapter<Repository>
 
+    @Inject
+    lateinit var viewModel: MyActivityViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         (application as MyApp).appComponent!!.inject(this)
+
+
     }
 }

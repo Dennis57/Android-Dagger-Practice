@@ -1,7 +1,9 @@
-package com.example.daggertraining
+package com.example.daggertraining.module
 
 import android.R
 import android.widget.ArrayAdapter
+import com.example.daggertraining.MyActivity
+import com.example.daggertraining.MyActivityScope
 import dagger.Module
 import dagger.Provides
 import javax.inject.Named
@@ -21,6 +23,6 @@ class MyActivityModule(activity: MyActivity) {
     @MyActivityScope
     @Named("my_list")
     fun providesMyListAdapter(): ArrayAdapter<*>? {
-        return ArrayAdapter<String>(activity!!, R.layout.my_list)
+        return ArrayAdapter<String>(activity!!, R.layout.activity_list_item)
     }
 }

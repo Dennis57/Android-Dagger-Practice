@@ -1,4 +1,4 @@
-package com.example.daggertraining
+package com.example.daggertraining.module
 
 import android.app.Application
 import dagger.Module

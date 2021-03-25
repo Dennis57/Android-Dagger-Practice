@@ -1,5 +1,6 @@
-package com.example.daggertraining
+package com.example.daggertraining.di
 
+import com.example.daggertraining.module.MyActivityModule
 import dagger.Component
 import javax.inject.Singleton
 

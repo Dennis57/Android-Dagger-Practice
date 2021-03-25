@@ -1,6 +1,9 @@
-package com.example.daggertraining
+package com.example.daggertraining.di
 
 import android.content.SharedPreferences
+import com.example.daggertraining.MyActivity
+import com.example.daggertraining.module.AppModule
+import com.example.daggertraining.module.NetModule
 import dagger.Component
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

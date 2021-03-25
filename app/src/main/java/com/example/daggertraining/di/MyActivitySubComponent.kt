@@ -1,5 +1,8 @@
-package com.example.daggertraining
+package com.example.daggertraining.di
 
+import com.example.daggertraining.MyActivity
+import com.example.daggertraining.MyActivityScope
+import com.example.daggertraining.module.MyActivityModule
 import dagger.Subcomponent
 
 @MyActivityScope

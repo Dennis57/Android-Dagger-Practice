@@ -2,6 +2,9 @@ package com.example.daggertraining
 
 
 import android.app.Application
+import com.example.daggertraining.di.AppComponent
+import com.example.daggertraining.module.AppModule
+import com.example.daggertraining.module.NetModule
 
 
 class MyApp : Application() {

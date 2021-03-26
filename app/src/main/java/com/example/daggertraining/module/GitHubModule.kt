@@ -12,7 +12,7 @@ import javax.inject.Singleton
 
 
 @Module
-object GitHubModule {
+class GitHubModule {
     interface GitHubApiInterface {
         @GET("/org/{orgName}/repos")
         fun getRepository(@Path("orgName") orgName: String): Observable<List<Repository>>

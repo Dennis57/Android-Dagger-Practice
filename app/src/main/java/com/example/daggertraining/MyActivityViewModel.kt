@@ -23,14 +23,11 @@ class MyActivityViewModel : ViewModel() {
     }
 
     @Inject
-    lateinit var retrofit: Retrofit
-
-    @Inject
     lateinit var mGitHubApiInterface: GitHubModule.GitHubApiInterface
 
     private fun getRepositoryData() {
         try {
-            val disposable = GitHubModule.providesGitHubInterface(retrofit).getRepository("org1")
+            val disposable = mGitHubApiInterface.getRepository(1)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({
